@@ -4,8 +4,8 @@ import {Injectable} from '@angular/core';
 export class SecretService {
   public get adalConfig(): any {
     return {
-      tenant: 'xxxxxx.onmicrosoft.com',
-      clientId: '00000000-0000-0000-0000-000000000000',
+      tenant: '56d9ab50-1409-48a1-99c9-e91dfdc9aec9',
+      clientId: '45690a9f-e653-49f8-ac1a-387c33ebf8a9',
       redirectUri: window.location.origin + '/',
       postLogoutRedirectUri: window.location.origin + '/'
     };
