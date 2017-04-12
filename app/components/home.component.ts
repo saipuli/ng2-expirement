@@ -7,26 +7,7 @@ import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'home',
-  template: `<div protected>
-  <h1>
-    Welcome - {{this.adalService.userInfo.userName}}
-  </h1>
-  <h3 [hidden]="!valuesError"> error with values- {{valuesError}} </h3>
-  <table class="table table-striped table-bordered table-condensed table-hover" [hidden]="error">
-    <thead>
-        <tr>
-            <th>Values</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let hero of values" (click)="getDetails()"><td>{{hero}}</td></tr>
-    </tbody>
-  </table>
-  <h3 [hidden]="!detailsError"> error with details - {{detailsError}} </h3>
-  <div>
-    <span>{{details}}</span>
-  </div>
-  <button (click)="logOut()">Logout</button></div>`
+  template: 'home.component.html'
 })
 export class HomeComponent implements OnInit {
   values: string[];

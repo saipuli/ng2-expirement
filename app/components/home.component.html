@@ -1,0 +1,46 @@
+  <div [class.dark-theme]="isDarkTheme">
+  <md-toolbar color="primary">
+    <span>
+      <md-icon class="icon-20">pets</md-icon>
+      LeashedIn
+    </span>
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+  </md-toolbar>
+  <md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item (click)="openDialog()">Settings</button>
+    <button md-menu-item (click)="isDarkTheme=!isDarkTheme">Toggle theme</button>
+    <button md-menu-item>Help</button>
+  </md-menu>
+  <div protected>
+  <h1>
+    Welcome - {{this.adalService.userInfo.userName}}
+  </h1>
+  <h3 [hidden]="!valuesError"> error with values- {{valuesError}} </h3>
+  <md-list>
+    <h3 md-subheader>Values</h3>
+    <md-list-item *ngFor="let val of values">
+      <md-icon md-list-avatar>folder</md-icon>
+      <h4 md-line (click)="getDetails()">{{val}}</h4>
+    </md-list-item>
+  </md-list>
+
+  <md-card>
+    <md-card-title>{{details}}</md-card-title>
+  </md-card>
+  <table class="table table-striped table-bordered table-condensed table-hover" [hidden]="error">
+    <thead>
+        <tr>
+            <th>Values</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hero of values" (click)="getDetails()"><td>{{hero}}</td></tr>
+    </tbody>
+  </table>
+  <h3 [hidden]="!detailsError"> error with details - {{detailsError}} </h3>
+  <div>
+    <span>{{details}}</span>
+  </div>
+  <button (click)="logOut()">Logout</button></div></div>
